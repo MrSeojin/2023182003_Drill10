@@ -1,6 +1,9 @@
 import game_framework
 from pico2d import*
 
+import play_mod
+
+
 def init():
     global image
     image = load_image('title.png')
@@ -25,4 +28,4 @@ def handle_events():
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             game_framework.quit()
         elif event.type == SDL_KEYDOWN and event.key == SDLK_SPACE:
-            game_framework.quit()
+            game_framework.change_mode(play_mod)
