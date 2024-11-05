@@ -1,3 +1,5 @@
+from game_world import*
+
 running = None
 stack = None
 

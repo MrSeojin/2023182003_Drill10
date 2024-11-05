@@ -16,6 +16,9 @@ def render():
         for o in layer:
             o.draw()
 
+def clear():
+    for layer in objects:
+        layer.clear()
 
 def remove_object(o):
     for layer in objects:
