@@ -1,23 +1,25 @@
 import game_framework
 from pico2d import*
 
+import game_world
+from pannel import*
 import play_mod
 
 
 def init():
-    global image
-    image = load_image('item_select.png')
+    global pannel
+    pannel = Pannel()
+    game_world.add_object(pannel, 3)
 
 def finish():
-    global image
-    del image
+    game_world.remove_object(pannel)
 
 def update():
     pass
 
 def draw():
     clear_canvas()
-    image.draw(400, 300)
+    pannel.draw()
     update_canvas()
 
 def handle_events():
