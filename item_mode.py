@@ -1,10 +1,10 @@
 import game_framework
 from pico2d import*
+from sdl2 import*
 
 import game_world
 from pannel import Pannel
 import play_mod
-
 
 def init():
     global pannel
@@ -19,7 +19,7 @@ def update():
 
 def draw():
     clear_canvas()
-    pannel.draw()
+    game_world.render()
     update_canvas()
 
 def handle_events(play_mode=None):
@@ -32,11 +32,14 @@ def handle_events(play_mode=None):
         elif event.type == SDL_KEYDOWN and event.key == SDLK_SPACE:
             game_framework.pop_mode()
         elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_0):
-            play_mode.boy.set_item('NONE')
+            play_mod.boy.item = None
+            game_framework.pop_mode()
         elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_1):
-            play_mode.boy.set_item('SmallBall')
+            play_mod.boy.item = 'SmallBall'
+            game_framework.pop_mode()
         elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_2):
-            play_mode.boy.set_item('BigBall')
+            play_mod.boy.item = 'BigBall'
+            game_framework.pop_mode()
 
 def pause():
     pass

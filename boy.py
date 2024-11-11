@@ -36,8 +36,6 @@ class Idle:
     def draw(boy):
         boy.image.clip_draw(boy.frame * 100, boy.action * 100, 100, 100, boy.x, boy.y)
 
-
-
 class Sleep:
     @staticmethod
     def enter(boy, e):
@@ -63,7 +61,6 @@ class Sleep:
             boy.image.clip_composite_draw(boy.frame * 100, 200, 100, 100,
                                           -3.141592 / 2, '', boy.x + 25, boy.y - 25, 100, 100)
 
-
 class Run:
     @staticmethod
     def enter(boy, e):
@@ -87,10 +84,6 @@ class Run:
     @staticmethod
     def draw(boy):
         boy.image.clip_draw(boy.frame * 100, boy.action * 100, 100, 100, boy.x, boy.y)
-
-
-
-
 
 class Boy:
 
@@ -126,7 +119,8 @@ class Boy:
     def fire_ball(self):
         if self.item == 'BigBall':
             ball = BigBall(self.x, self.y, self.face_dir * 10)
+            game_world.add_object(ball)
         elif self.item == 'SmallBall':
             ball = Ball(self.x, self.y, self.face_dir * 10)
-        game_world.add_object(ball)
-
+            game_world.add_object(ball)
+        pass

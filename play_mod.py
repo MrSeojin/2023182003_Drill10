@@ -7,6 +7,14 @@ import title_mode
 from grass import Grass
 from boy import Boy
 
+
+def init():
+    global boy
+    grass = Grass()
+    game_world.add_object(grass, 0)
+    boy = Boy()
+    game_world.add_object(boy, 1)
+
 def handle_events():
     global running
 
@@ -20,14 +28,6 @@ def handle_events():
             game_framework.push_mode(item_mode)
         else:
             boy.handle_event(event)
-
-def init():
-    global boy
-    grass = Grass()
-    game_world.add_object(grass, 0)
-    boy = Boy()
-    game_world.add_object(boy, 1)
-
 
 def finish():
     game_world.clear()
