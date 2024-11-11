@@ -23,7 +23,7 @@ class Bird:
         self.font = load_font('ENCR10B.TTF', 16)
         self.frame, self.action = 0, 0
         self.w, self.h = 183 / 3, 168 / 3
-        self.x, self.y = random.randint(100, 1500), 400
+        self.x, self.y = random.randint(100, 1500), random.randint(100, 500)
         self.speed = 3
 
         self.rad, self.flip = 0, 0
