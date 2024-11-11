@@ -22,10 +22,9 @@ class Bird:
     def __init__(self):
         self.font = load_font('ENCR10B.TTF', 16)
         self.frame, self.action = 0, 0
-        size = random.randint(1, 5)
-        self.w, self.h = 183 / size, 168 / size
+        self.w, self.h = 183 / 3, 168 / 3
         self.x, self.y = random.randint(100, 1500), 400
-        self.speed = random.randint(1, 5)
+        self.speed = 3
 
         self.rad, self.flip = 0, 0
         self.dir = 1
